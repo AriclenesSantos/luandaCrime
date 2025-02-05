@@ -1,0 +1,115 @@
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <title>Monitor de Criminalidade - Luanda</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+  <div class="theme-toggle">
+    <i class="fas fa-moon"></i>
+  </div>
+
+  <main class="content">
+    <header>
+      <h1>Monitor de Criminalidade</h1>
+      <div class="period-selector">
+        <button class="active">7 Dias</button>
+        <button>30 Dias</button>
+        <button>6 Meses</button>
+      </div>
+    </header>
+
+    <section id="overview" class="section">
+      <div class="metric-cards">
+        <div class="metric-card total">
+          <div class="icon">
+            <i class="fas fa-exclamation-triangle"></i>
+          </div>
+          <div class="info">
+            <h3>Total de Ocorrências</h3>
+            <p class="number">2,847</p>
+            <p class="trend up">
+              <i class="fas fa-arrow-up"></i>
+              12% vs período anterior
+            </p>
+          </div>
+        </div>
+
+        <div class="metric-card violent">
+          <div class="icon">
+            <i class="fas fa-fist-raised"></i>
+          </div>
+          <div class="info">
+            <h3>Crimes Violentos</h3>
+            <p class="number">976</p>
+            <p class="trend down">
+              <i class="fas fa-arrow-down"></i>
+              5% vs período anterior
+            </p>
+          </div>
+        </div>
+
+        <div class="metric-card critical">
+          <div class="icon">
+            <i class="fas fa-skull"></i>
+          </div>
+          <div class="info">
+            <h3>Crimes Críticos</h3>
+            <p class="number">142</p>
+            <p class="trend up">
+              <i class="fas fa-arrow-up"></i>
+              8% vs período anterior
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="chart-grid">
+        <div class="chart-card">
+          <h3>Distribuição por Zona</h3>
+          <canvas id="zoneDistribution"></canvas>
+        </div>
+        
+        <div class="chart-card">
+          <h3>Evolução Temporal</h3>
+          <canvas id="timeEvolution"></canvas>
+        </div>
+        
+        <div class="chart-card full-width">
+          <div id="crimeTypes-container" style="height: 400px;">
+            <h3>Incidência por Tipo de Crime</h3>
+            <canvas id="crimeTypes"></canvas>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="detailed-stats">
+      <h2>Estatísticas Detalhadas por Zona</h2>
+      <div class="zone-stats" id="zoneStats">
+        <!-- Preenchido via JavaScript -->
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <a href="C:\Users\NEMESIS\Desktop\luandaCrime Zone\loading pages\loadMap.html" class="footerbutton">
+        <img src="C:\Users\NEMESIS\Desktop\luandaCrime Zone\icones\mapaIcone.png" alt="" class="footerIcone">
+    </a>
+    <a href="" class="footerbutton">
+        <img src="C:\Users\NEMESIS\Desktop\luandaCrime Zone\icones\plusIcone.png" alt="" class="footerIcone">
+    </a>
+    <a href="C:\Users\NEMESIS\Desktop\luandaCrime Zone\estatisticas\esta.html" class="footerbutton">
+        <img src="C:\Users\NEMESIS\Desktop\luandaCrime Zone\icones\graficoIcone.png" alt="" class="footerIcone">
+    </a>
+    <a href="" class="footerbutton">
+        <img src="C:\Users\NEMESIS\Desktop\luandaCrime Zone\icones\perfilIcone.png" alt="" class="footerIcone">
+    </a>
+</footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
