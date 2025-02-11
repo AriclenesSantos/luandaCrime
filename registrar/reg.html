@@ -1,0 +1,172 @@
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <title>Registrar Crime - Monitor de Criminalidade</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+  <div class="theme-toggle">
+    <i class="fas fa-moon"></i>
+  </div>
+
+  <main class="content">
+    <header>
+      <h1>Registrar Crime</h1>
+    </header>
+
+    <div class="registration-container">
+      <!-- Initial State -->
+      <div class="registration-step" id="initial-step">
+        <button class="primary-button" id="start-registration">
+          <i class="fas fa-plus-circle"></i>
+          Registrar Novo Crime
+        </button>
+      </div>
+
+      <!-- Region Selection -->
+      <div class="registration-step hidden" id="region-step">
+        <h2>Selecione a Região</h2>
+        <div class="search-container">
+          <input type="text" id="region-search" placeholder="Digite para pesquisar a região...">
+          <div class="search-results" id="region-results"></div>
+        </div>
+        
+        <div class="form-group">
+          <label>Bairro/Rua:</label>
+          <input type="text" 
+                 id="location-input" 
+                 maxlength="50" 
+                 placeholder="Digite o bairro ou rua específica...">
+          <div class="char-counter"><span id="location-char-count">0</span>/50</div>
+        </div>
+
+        <div class="button-group">
+          <button class="secondary-button" data-action="back">Voltar</button>
+          <button class="primary-button" data-action="next" disabled>Seguinte</button>
+        </div>
+      </div>
+
+      <!-- Crime Type Selection -->
+      <div class="registration-step hidden" id="crime-type-step">
+        <h2>Tipo de Crime</h2>
+        <div class="search-container">
+          <input type="text" id="crime-search" placeholder="Digite para pesquisar o tipo de crime...">
+          <div class="search-results" id="crime-results"></div>
+        </div>
+        <div class="button-group">
+          <button class="secondary-button" data-action="back">Voltar</button>
+          <button class="primary-button" data-action="next" disabled>Seguinte</button>
+        </div>
+      </div>
+
+      <!-- Weapons Information -->
+      <div class="registration-step hidden" id="weapons-step">
+        <h2>Informação sobre Armas</h2>
+        <div class="weapons-form">
+          <div class="form-group">
+            <label>Houve presença de armas?</label>
+            <div class="radio-group">
+              <label>
+                <input type="radio" name="weapons-present" value="yes"> Sim
+              </label>
+              <label>
+                <input type="radio" name="weapons-present" value="no"> Não
+              </label>
+            </div>
+          </div>
+          
+          <div class="weapons-details hidden">
+            <div class="form-group">
+              <label>Armas de fogo:</label>
+              <input type="number" min="0" id="firearms-quantity" placeholder="Quantidade de armas de fogo">
+            </div>
+            
+            <div class="form-group">
+              <label>Armas brancas:</label>
+              <input type="number" min="0" id="melee-weapons-quantity" placeholder="Quantidade de armas brancas">
+            </div>
+          </div>
+        </div>
+        <div class="button-group">
+          <button class="secondary-button" data-action="back">Voltar</button>
+          <button class="primary-button" data-action="next">Seguinte</button>
+        </div>
+      </div>
+
+      <!-- Casualties Information -->
+      <div class="registration-step hidden" id="casualties-step">
+        <h2>Vítimas</h2>
+        <div class="casualties-form">
+          <div class="form-group">
+            <label>Houve mortes ou feridos?</label>
+            <div class="radio-group">
+              <label>
+                <input type="radio" name="casualties-present" value="yes"> Sim
+              </label>
+              <label>
+                <input type="radio" name="casualties-present" value="no"> Não
+              </label>
+            </div>
+          </div>
+          
+          <div class="casualties-details hidden">
+            <div class="form-group">
+              <label>Número de mortes:</label>
+              <input type="number" min="0" id="deaths-quantity">
+            </div>
+            
+            <div class="form-group">
+              <label>Número de feridos:</label>
+              <input type="number" min="0" id="injured-quantity">
+            </div>
+          </div>
+        </div>
+        <div class="button-group">
+          <button class="secondary-button" data-action="back">Voltar</button>
+          <button class="primary-button" data-action="next">Seguinte</button>
+        </div>
+      </div>
+
+      <!-- Additional Arguments -->
+      <div class="registration-step hidden" id="arguments-step">
+        <h2>Argumentos Adicionais</h2>
+        <div class="form-group">
+          <textarea id="additional-args" maxlength="255" placeholder="Digite informações adicionais (máximo 255 caracteres)..."></textarea>
+          <div class="char-counter"><span id="char-count">0</span>/255</div>
+        </div>
+        <div class="button-group">
+          <button class="secondary-button" data-action="back">Voltar</button>
+          <button class="primary-button" data-action="finish">Concluir Registro</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Success Modal -->
+    <div class="modal hidden" id="success-modal">
+      <div class="modal-content">
+        <i class="fas fa-check-circle success-icon"></i>
+        <h3>Registro de crime enviado</h3>
+        <button class="primary-button" id="modal-ok">OK</button>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <a href="C:\Users\NEMESIS\Desktop\luandaCrime Zone\loading pages\loadMap.html" class="footerbutton">
+        <img src="C:\Users\NEMESIS\Desktop\luandaCrime Zone\icones\mapaIcone.png" alt="" class="footerIcone">
+    </a>
+    <a href="C:\Users\NEMESIS\Desktop\luandaCrime Zone\registrar\reg.html" class="footerbutton">
+        <img src="C:\Users\NEMESIS\Desktop\luandaCrime Zone\icones\plusIcone.png" alt="" class="footerIcone">
+    </a>
+    <a href="C:\Users\NEMESIS\Desktop\luandaCrime Zone\estatisticas\esta.html" class="footerbutton">
+        <img src="C:\Users\NEMESIS\Desktop\luandaCrime Zone\icones\graficoIcone.png" alt="" class="footerIcone">
+    </a>
+    <a href="" class="footerbutton">
+        <img src="C:\Users\NEMESIS\Desktop\luandaCrime Zone\icones\perfilIcone.png" alt="" class="footerIcone">
+    </a>
+</footer>
+
+  <script src="register.js"></script>
+</body>
+</html>

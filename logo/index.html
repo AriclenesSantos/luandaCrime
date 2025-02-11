@@ -1,0 +1,105 @@
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <title>Luanda Alerta de Crimes - Logo</title>
+  <style>
+    :root {
+      --primary-color: #0052cc;
+      --danger-color: #ff4444;
+      --warning-color: #ffd700;
+    }
+    
+    body {
+      margin: 0;
+      padding: 0;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: linear-gradient(135deg, #f5f8ff 0%, #e8f0ff 100%);
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    
+    .logo-container {
+      text-align: center;
+      animation: fadeIn 1.5s ease-out;
+    }
+    
+    .logo-svg {
+      width: 200px;
+      height: 200px;
+      margin-bottom: 1rem;
+    }
+    
+    .logo-text {
+      font-size: 2.5rem;
+      font-weight: bold;
+      color: var(--primary-color);
+      margin: 1rem 0;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
+    
+    .logo-subtext {
+      font-size: 1.2rem;
+      color: #666;
+      margin-top: 0.5rem;
+    }
+    
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    
+    @keyframes pulse {
+      0% {
+        transform: scale(1);
+      }
+      50% {
+        transform: scale(1.05);
+      }
+      100% {
+        transform: scale(1);
+      }
+    }
+    
+    .alert-icon {
+      animation: pulse 2s infinite ease-in-out;
+    }
+    
+    .city-silhouette {
+      fill: var(--primary-color);
+      opacity: 0.1;
+    }
+  </style>
+</head>
+<body>
+  <div class="logo-container">
+    <svg class="logo-svg" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+      <!-- City silhouette background -->
+      <path class="city-silhouette" d="M0,180 L20,180 L20,140 L40,140 L40,160 L60,160 L60,120 L80,120 L80,150 L100,150 L100,100 L120,100 L120,140 L140,140 L140,120 L160,120 L160,150 L180,150 L180,130 L200,130 L200,180 L0,180 Z"/>
+      
+      <!-- Main shield shape -->
+      <path fill="#0052cc" d="M100,20 L160,40 C160,120 140,160 100,180 C60,160 40,120 40,40 L100,20 Z" opacity="0.9"/>
+      
+      <!-- Alert symbol -->
+      <g class="alert-icon">
+        <path fill="#ffd700" d="M100,60 L120,110 H80 L100,60 Z"/>
+        <circle fill="#ff4444" cx="100" cy="120" r="5"/>
+      </g>
+      
+      <!-- Map marker outline -->
+      <path fill="none" stroke="#ffffff" stroke-width="3" d="M100,50 C120,50 135,65 135,85 C135,105 100,140 100,140 C100,140 65,105 65,85 C65,65 80,50 100,50 Z"/>
+    </svg>
+    
+    <div class="logo-text">Luanda Alerta</div>
+    <div class="logo-subtext">Sistema de Monitoramento de Crimes</div>
+  </div>
+</body>
+</html>
