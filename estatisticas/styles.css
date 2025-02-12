@@ -195,8 +195,9 @@ footer {
   bottom: 0;
   left: 0;
   width: 100%;
+  height: 8%;
   background:#ffffff;
-  color: white;
+  color: rgb(97, 21, 248);
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -205,12 +206,18 @@ footer {
   z-index: 2;
 }
 
+
+
 .footerbutton {
   background: none;
   border: none;
-  color: white;
+  display: flex;
+  align-items: center;
+  
+  color: rgb(16, 17, 17);
   font-size: 1rem;
   cursor: pointer;
+  text-decoration: none;
 }
 
 footer button.active {
@@ -220,6 +227,9 @@ footer button.active {
 
 .footerIcone
 {
-  width: 25px;
-  height: 25px;
+  min-height: 25px;
+  min-width: 25px;
+
+  max-height: 30px;
+  max-width: 30px;
 }

@@ -8,12 +8,26 @@
         body {
             font-family: Arial, sans-serif;
             text-align: center;
-            background-color: #ffffff;
+            background: linear-gradient(135deg, #f5f8ff 0%, #e8f0ff 100%);
             padding: 20px;
             display: flex;
             justify-content: center;
             align-items: center;
             height: 100vh;
+        }
+
+        .load
+        {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        .logoImg
+        {
+            width: 35%;
+            height: 35%;
         }
 
         .gif {
@@ -24,6 +38,7 @@
 </head>
 <body>
     <div class="load">
+        <img src="C:\Users\NEMESIS\Desktop\luandaCrime Zone\imagens\logo00.png" alt="" class="logoImg">
         <img src="hourglass_8721071.gif" alt="Descrição do GIF" class="gif">
     </div>
     
@@ -31,7 +46,7 @@
         function redirecionar() {
             window.location.href = "file:///C:/Users/NEMESIS/Desktop/luandaCrime%20Zone/registrar/reg.html"; // Caminho para o arquivo HTML"; 
         }
-        setTimeout(redirecionar, 3000);
+        setTimeout(redirecionar, 5000);
     </script>
 </body>
 </html>

@@ -225,6 +225,7 @@ footer {
     bottom: 0;
     left: 0;
     width: 100%;
+    height: 8%;
     background:#ffffff;
     color: rgb(97, 21, 248);
     display: flex;
@@ -233,11 +234,11 @@ footer {
     padding: 1rem 0;
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5); /* Sombra */
     z-index: 2;
-}
-
-
-
-.footerbutton {
+  }
+  
+  
+  
+  .footerbutton {
     background: none;
     border: none;
     display: flex;
@@ -247,15 +248,18 @@ footer {
     font-size: 1rem;
     cursor: pointer;
     text-decoration: none;
-}
-
-footer button.active {
+  }
+  
+  footer button.active {
     color: #50c2c9;
     font-weight: bold;
-}
-
-.footerIcone
-{
-    width: 25px;
-    height: 25px;
-}
+  }
+  
+  .footerIcone
+  {
+    min-height: 25px;
+    min-width: 25px;
+  
+    max-height: 30px;
+    max-width: 30px;
+  }
