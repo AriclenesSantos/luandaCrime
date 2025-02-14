@@ -1,0 +1,242 @@
+:root {
+    --primary-color: #0052cc;
+    --danger-color: #ff4444;
+    --warning-color: #ffd700;
+  }
+  
+  body {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #f5f8ff 0%, #e8f0ff 100%);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-image: url(back02.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+  }
+  
+  .logo-container {
+    background-color: #eef3ff;
+    text-align: center;
+    animation: fadeIn 1.5s ease-out;
+    width: 100%;
+    height: 700px;
+    display: flex;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+  }
+
+  .moreInformations01
+  {
+    width: 100%;
+    height: 700px;
+    background-color: #ffffff00;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .a01
+  {
+    background-color: #c4c4c42d;
+    width: 50%;
+    height: 100%;
+    backdrop-filter: blur(10px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #eef3ff;
+    font-size: 30px;
+    text-shadow: 4px 4px 6px rgb(0, 0, 0, 0.5);
+    font-family: 'Times New Roman', Times, serif;
+    
+  }
+
+  
+
+  .a02
+  {
+    background-color: #eef3ff;
+    width: 50%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    color: #0052cc;
+    font-size: 20px;
+    font-family: 'Times New Roman', Times, serif;
+    
+  }
+  .a02 p
+  {
+    padding: 49px;
+    font-size: 30px;
+    font-family: 'Times New Roman', Times, serif;
+    text-shadow: 2px 2px 4px rgb(0, 0, 0, 0.5);
+  }
+
+  .moreInformations02
+  {
+    width: 100%;
+    height: 700px;
+    background-color: #ffffff00;
+    color: #e8f0ff;
+    text-align: center;
+    font-size: 30px;
+    text-shadow: 4px 4px 6px rgb(0, 0, 0, 0.5);
+    font-family: 'Times New Roman', Times, serif;
+  }
+
+  .cardsContainer
+  {
+    width: 100%;
+    height: 100%;
+    background-image: url(back02.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+  }
+
+  .card
+  {
+    width: 320px;
+    height: 520px;
+    background-image: linear-gradient(135deg, #d9ecfc81 10%, #b1deff00 100%);
+    backdrop-filter: blur(20px);
+    margin: 20px;
+    border-radius: 20px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.553);
+  }
+
+  .iconContainer01, .iconContainer02, .iconContainer03
+  {
+    width: 100%;
+    height: 50%;
+    background-size: cover;
+    border-radius: 20px;
+  }
+
+  .iconContainer01
+  {
+    background-image: url(i01.png);
+  }
+
+  .iconContainer02
+  {
+    background-image: url(i03.jpg);
+  }
+
+  .iconContainer03
+  {
+    background-image: url(i02.jpg);
+  }
+
+  .cardIcon
+  {
+    width: 30px;
+    height: 30px;
+    padding: 10px;
+  }
+
+  .cardInfo
+  {
+   display: flex; 
+   align-items: center;
+   justify-content: center;
+   flex-direction: column;
+   text-align: center;
+   font-family: 'Times New Roman', Times, serif;
+  }
+
+  .cardTitle
+  {
+    display: flex; 
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    color: #ffffff;
+    font-family: 'Times New Roman', Times, serif;
+    padding: 1px;
+    text-shadow: 2px 2px 4px rgb(0, 0, 0, 0.5);
+    font-size: 20px;
+  }
+  
+  .moreInformations03
+  {
+    width: 100%;
+    height: 100px;
+    background-color: #f5f8ff00;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+ 
+  .botao
+  {
+    width: 150px;
+    height: 50px;
+    background-color: #0052cc;
+    color: #e8f0ff;
+    border: none;
+    padding: 1rem 2rem;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 1.1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin: 1rem auto;
+    transition: opacity 0.3s ease;font-family: 'Times New Roman', Times, serif;
+  }
+
+
+
+  footer {
+    background-color: #eef3ff;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    font-size: 14px;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    color: #0052cc;
+}
+
+.social, .footer-nav {
+    list-style: none;
+    padding: 0;
+    margin: 10px 0;
+}
+
+.social li, .footer-nav li {
+    display: inline;
+    margin: 0 10px;
+}
+
+.social a, .footer-nav a {
+    color: #1e90ff;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.social a:hover, .footer-nav a:hover {
+    color: #ffcc00;
+}
+

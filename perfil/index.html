@@ -1,0 +1,67 @@
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <title>Perfil do Usuário - Monitor de Criminalidade</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+  <div class="theme-toggle">
+    <i class="fas fa-moon"></i>
+  </div>
+
+  <main class="content">
+    <div class="profile-container">
+      <div class="profile-header">
+        <div class="profile-avatar">
+          <img src="https://via.placeholder.com/150" alt="Foto de perfil" id="profile-image">
+          <div class="edit-avatar">
+            <label for="avatar-upload">
+              <i class="fas fa-camera"></i>
+            </label>
+            <input type="file" id="avatar-upload" accept="image/*" style="display: none;">
+          </div>
+        </div>
+        <div class="profile-info">
+          <h1>João Silva</h1>
+          <div class="info-item">
+            <i class="fas fa-envelope"></i>
+            <span><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="1872777977366b71746e79587d75797174367b7775">[email&#160;protected]</a></span>
+          </div>
+          <div class="info-item">
+            <i class="fas fa-phone"></i>
+            <span>+244 923 456 789</span>
+          </div>
+          <div class="info-item">
+            <i class="fas fa-map-marker-alt"></i>
+            <span>Rua Principal, 123, Talatona</span>
+          </div>
+          <button class="edit-profile-btn">
+            <i class="fas fa-edit"></i>
+            sair
+          </button>
+        </div>
+      </div>
+
+      <div class="reports-section">
+        <h2>Histórico de Registros</h2>
+        <div class="reports-filter">
+          <input type="text" placeholder="Pesquisar registros..." id="search-reports">
+          <select id="filter-type">
+            <option value="all">Todos os tipos</option>
+            <option value="homicidio">Homicídio</option>
+            <option value="latrocinio">Latrocínio</option>
+            <option value="sequestro">Sequestro</option>
+            <!-- Add other crime types as needed -->
+          </select>
+        </div>
+        <div class="reports-list" id="reports-list">
+          <!-- Reports will be dynamically inserted here -->
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="profile.js"></script>
+</body>
+</html>

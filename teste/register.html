@@ -1,0 +1,160 @@
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <title>Registro de Crime - Monitor de Criminalidade</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body data-theme="light">
+  <div class="theme-toggle">
+    <i class="fas fa-moon"></i>
+  </div>
+
+  <main class="content">
+    <div class="registration-container">
+      <h2>Registro de Crime</h2>
+      <div class="registration-step" id="initial-step">
+        <p>Para registrar um crime, por favor, clique no botão abaixo.</p>
+        <button id="start-registration" class="primary-button">
+          <i class="fas fa-plus-circle"></i>
+          Iniciar Registro
+        </button>
+      </div>
+
+      <div class="registration-step hidden" id="region-step">
+        <h3>Região e Local</h3>
+        <input type="text" id="region-search" placeholder="Pesquisar região...">
+        <div id="region-results" class="search-results"></div>
+        <input type="text" id="location-input" placeholder="Local do crime...">
+        <p id="location-char-count">0/200 caracteres</p>
+        <button data-action="back" class="secondary-button">
+          <i class="fas fa-arrow-left"></i>
+          Voltar
+        </button>
+        <button data-action="next" class="primary-button" disabled>
+          <i class="fas fa-arrow-right"></i>
+          Próximo
+        </button>
+      </div>
+
+      <div class="registration-step hidden" id="crime-type-step">
+        <h3>Tipo de Crime</h3>
+        <input type="text" id="crime-search" placeholder="Pesquisar tipo de crime...">
+        <div id="crime-results" class="search-results"></div>
+        <button data-action="back" class="secondary-button">
+          <i class="fas fa-arrow-left"></i>
+          Voltar
+        </button>
+        <button data-action="next" class="primary-button" disabled>
+          <i class="fas fa-arrow-right"></i>
+          Próximo
+        </button>
+      </div>
+
+      <div class="registration-step hidden" id="weapons-step">
+        <h3>Armas</h3>
+        <div class="form-group">
+          <label for="weapons-present">Armas presentes?</label>
+          <div class="radio-group">
+            <input type="radio" name="weapons-present" value="yes" id="weapons-yes">
+            <label for="weapons-yes">Sim</label>
+            <input type="radio" name="weapons-present" value="no" id="weapons-no" checked>
+            <label for="weapons-no">Não</label>
+          </div>
+        </div>
+        <div class="weapons-details hidden">
+          <div class="form-group">
+            <label for="firearms-quantity">Quantidade de armas de fogo</label>
+            <input type="number" id="firearms-quantity" value="0">
+          </div>
+          <div class="form-group">
+            <label for="melee-weapons-quantity">Quantidade de armas brancas</label>
+            <input type="number" id="melee-weapons-quantity" value="0">
+          </div>
+        </div>
+        <button data-action="back" class="secondary-button">
+          <i class="fas fa-arrow-left"></i>
+          Voltar
+        </button>
+        <button data-action="next" class="primary-button">
+          <i class="fas fa-arrow-right"></i>
+          Próximo
+        </button>
+      </div>
+
+      <div class="registration-step hidden" id="casualties-step">
+        <h3>Vítimas</h3>
+        <div class="form-group">
+          <label for="casualties-present">Vítimas?</label>
+          <div class="radio-group">
+            <input type="radio" name="casualties-present" value="yes" id="casualties-yes">
+            <label for="casualties-yes">Sim</label>
+            <input type="radio" name="casualties-present" value="no" id="casualties-no" checked>
+            <label for="casualties-no">Não</label>
+          </div>
+        </div>
+        <div class="casualties-details hidden">
+          <div class="form-group">
+            <label for="deaths-quantity">Quantidade de mortos</label>
+            <input type="number" id="deaths-quantity" value="0">
+          </div>
+          <div class="form-group">
+            <label for="injured-quantity">Quantidade de feridos</label>
+            <input type="number" id="injured-quantity" value="0">
+          </div>
+        </div>
+        <button data-action="back" class="secondary-button">
+          <i class="fas fa-arrow-left"></i>
+          Voltar
+        </button>
+        <button data-action="next" class="primary-button">
+          <i class="fas fa-arrow-right"></i>
+          Próximo
+        </button>
+      </div>
+
+      <div class="registration-step hidden" id="arguments-step">
+        <h3>Argumentos Adicionais</h3>
+        <textarea id="additional-args" placeholder="Descreva os eventos..."></textarea>
+        <p id="char-count">0/500 caracteres</p>
+        <button data-action="back" class="secondary-button">
+          <i class="fas fa-arrow-left"></i>
+          Voltar
+        </button>
+        <button data-action="finish" class="primary-button">
+          <i class="fas fa-check-circle"></i>
+          Concluir
+        </button>
+      </div>
+
+      <div class="modal hidden" id="success-modal">
+        <div class="modal-content">
+          <i class="fas fa-check-circle success-icon"></i>
+          <h3>Registro efetuado com sucesso!</h3>
+          <button id="modal-ok" class="primary-button">
+            <i class="fas fa-arrow-right"></i>
+            Ok
+          </button>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <nav class="footer-nav">
+    <a href="index.html" class="nav-link">
+      <i class="fas fa-chart-bar"></i>
+      <span>Estatísticas</span>
+    </a>
+    <a href="register.html" class="nav-link active">
+      <i class="fas fa-plus-circle"></i>
+      <span>Registrar</span>
+    </a>
+    <a href="profile.html" class="nav-link">
+      <i class="fas fa-user"></i>
+      <span>Perfil</span>
+    </a>
+  </nav>
+
+  <script src="register.js"></script>
+</body>
+</html>

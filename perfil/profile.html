@@ -1,0 +1,83 @@
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <title>Perfil do Usuário - Monitor de Criminalidade</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="styless.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+  <div class="theme-toggle">
+    <i class="fas fa-moon"></i>
+  </div>
+
+  <main class="content">
+    <div class="profile-container">
+      <div class="profile-header">
+        <div class="profile-avatar">
+          <img src="3,4.jpg" alt="Foto de perfil" id="profile-image">
+          <div class="edit-avatar">
+            <label for="avatar-upload">
+              <i class="fas fa-camera"></i>
+            </label>
+            <input type="file" id="avatar-upload" accept="image/*" style="display: none;">
+          </div>
+        </div>
+        <div class="profile-info">
+          <h1>Ary Santos</h1>
+          <div class="info-item">
+            <i class="fas fa-envelope"></i>
+            <span>Ary@Santos.com</span>
+          </div>
+          <div class="info-item">
+            <i class="fas fa-phone"></i>
+            <span>949 265 323</span>
+          </div>
+          <div class="info-item">
+            <i class="fas fa-map-marker-alt"></i>
+            <span>Luanda, Viana, Incutal, KM14</span>
+          </div>
+          <button onclick="window.location.href='C:/Users/NEMESIS/Desktop/luandaCrime Zone/pagina de inicio/inicio.html';" class="edit-profile-btn">
+            <i class="fas fa-edit"></i>
+            Sair
+          </button>
+        </div>
+      </div>
+
+      <div class="reports-section">
+        <h2>Histórico de Registros</h2>
+        <div class="reports-filter">
+          <input type="text" placeholder="Pesquisar registros..." id="search-reports">
+          <select id="filter-type">
+            <option value="all">Todos os tipos</option>
+            <option value="homicidio">Homicídio</option>
+            <option value="latrocinio">Latrocínio</option>
+            <option value="sequestro">Sequestro</option>
+            <!-- Add other crime types as needed -->
+          </select>
+        </div>
+        <div class="reports-list" id="reports-list">
+          <!-- Reports will be dynamically inserted here -->
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <a href="C:\Users\NEMESIS\Desktop\luandaCrime Zone\loading pages\loadMap.html" class="footerbutton">
+        <img src="C:\Users\NEMESIS\Desktop\luandaCrime Zone\icones\mapaIcone.png" alt="" class="footerIcone">
+    </a>
+    <a href="C:\Users\NEMESIS\Desktop\luandaCrime Zone\registrar\reg.html" class="footerbutton">
+        <img src="C:\Users\NEMESIS\Desktop\luandaCrime Zone\icones\plusIcone.png" alt="" class="footerIcone">
+    </a>
+    <a href="C:\Users\NEMESIS\Desktop\luandaCrime Zone\loading pages\loadEsta.html" class="footerbutton">
+        <img src="C:\Users\NEMESIS\Desktop\luandaCrime Zone\icones\graficoIcone.png" alt="" class="footerIcone">
+    </a>
+    <a href="C:\Users\NEMESIS\Desktop\luandaCrime Zone\loading pages\loadPerfil.html" class="footerbutton">
+        <img src="C:\Users\NEMESIS\Desktop\luandaCrime Zone\icones\perfilIcone.png" alt="" class="footerIcone">
+    </a>
+</footer>
+
+  <script src="profile.js"></script>
+</body>
+</html>
