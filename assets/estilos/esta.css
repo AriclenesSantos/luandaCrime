@@ -41,7 +41,7 @@ body {
 }
 
 .content {
-  padding: 2rem;
+  padding: 1rem; /* Adjusted padding for mobile */
   width: 100%;
 }
 
@@ -78,9 +78,9 @@ header {
 
 .metric-cards {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Adjusted min width for mobile */
   gap: 1rem;
-  margin-bottom: 2rem;
+  margin-bottom: 1rem; /* Reduced margin for mobile */
 }
 
 .metric-card {
@@ -137,12 +137,12 @@ header {
   padding: 1.5rem;
   border-radius: 15px;
   box-shadow: var(--card-shadow);
-  height: 400px;
+  height: auto; /* Changed to auto for better responsiveness */
 }
 
 .chart-card.full-width {
   grid-column: 1 / -1;
-  height: 400px;
+  height: auto; /* Changed to auto for better responsiveness */
 }
 
 .chart-card h3 {
@@ -206,8 +206,6 @@ footer {
   z-index: 2;
 }
 
-
-
 .footerbutton {
   background: none;
   border: none;
@@ -225,11 +223,21 @@ footer button.active {
   font-weight: bold;
 }
 
-.footerIcone
-{
-  min-height: 25px;
-  min-width: 25px;
+.footerIcone {
+  height: 85px;
+  width: 85px;
+}
 
-  max-height: 30px;
-  max-width: 30px;
+@media screen and (max-width: 768px) {
+  .content {
+    padding: 1rem; /* Adjusted padding for mobile */
+  }
+  .metric-cards {
+    grid-template-columns: 1fr; /* Stack cards on mobile */
+  }
+  .chart-card {
+    height: auto; /* Ensure chart cards are responsive */
+  }
+
+  
 }

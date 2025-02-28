@@ -410,8 +410,6 @@ footer {
   z-index: 2;
 }
 
-
-
 .footerbutton {
   background: none;
   border: none;
@@ -429,11 +427,9 @@ footer button.active {
   font-weight: bold;
 }
 
-.footerIcone
-{
+.footerIcone {
   min-height: 25px;
   min-width: 25px;
-
   max-height: 30px;
   max-width: 30px;
 }

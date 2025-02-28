@@ -165,42 +165,34 @@ class RegistrationFlow {
     }
   }
 
-  async finishRegistration() {
-    // Collect final data
-    if (this.registrationData.weapons.present) {
-      this.registrationData.weapons.firearms = parseInt(document.getElementById('firearms-quantity').value) || 0;
-      this.registrationData.weapons.meleeWeapons = parseInt(document.getElementById('melee-weapons-quantity').value) || 0;
-    }
-    
-    if (this.registrationData.casualties.present) {
-      this.registrationData.casualties.deaths = parseInt(document.getElementById('deaths-quantity').value) || 0;
-      this.registrationData.casualties.injured = parseInt(document.getElementById('injured-quantity').value) || 0;
-    }
-    this.registrationData.additionalArgs = document.getElementById('additional-args').value;
-    
-    try {
-      // Add user_id to the registration data (you should get this from your authentication system)
-      this.registrationData.user_id = 1; // Example user ID
-
-      const response = await fetch('register_crime.php', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(this.registrationData)
-      });
-
-      const result = await response.json();
-      
-      if (result.success) {
-        // Show success modal
-        document.getElementById('success-modal').classList.remove('hidden');
-      } else {
-        alert('Error registering crime: ' + result.message);
+    finishRegistration() {
+      // Collect final data
+      if (this.registrationData.weapons.present) {
+        this.registrationData.weapons.firearms = parseInt(document.getElementById('firearms-quantity').value) || 0;
+        console.log(`Firearms count: ${this.registrationData.weapons.firearms}`);
+        this.registrationData.weapons.meleeWeapons = parseInt(document.getElementById('melee-weapons-quantity').value) || 0;
       }
-    } catch (error) {
-      alert('Error registering crime: ' + error.message);
-    }
+      
+      if (this.registrationData.casualties.present) {
+        this.registrationData.casualties.deaths = parseInt(document.getElementById('deaths-quantity').value) || 0;
+        console.log(`Deaths count: ${this.registrationData.casualties.deaths}`);
+        this.registrationData.casualties.injured = parseInt(document.getElementById('injured-quantity').value) || 0;
+        console.log(`Injured count: ${this.registrationData.casualties.injured}`);
+      }
+      this.registrationData.additionalArgs = document.getElementById('additional-args').value;
+      this.registrationData.created_at = new Date().toISOString(); // Set the current date and time
+
+      // Save to Local Storage
+      let reports = JSON.parse(localStorage.getItem('crimeReports')) || [];
+      reports.push(this.registrationData);
+      localStorage.setItem('crimeReports', JSON.stringify(reports));
+      console.log(`Report saved: ${JSON.stringify(this.registrationData)}`);
+      console.log(`Total reports in Local Storage: ${reports.length}`);
+      console.log(`Report saved: ${JSON.stringify(this.registrationData)}`);
+
+      // Show success modal
+      document.getElementById('success-modal').classList.remove('hidden');
+
   }
 
   resetForm() {

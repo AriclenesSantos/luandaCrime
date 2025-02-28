@@ -33,22 +33,12 @@ class ProfileManager {
     });
   }
 
-  async loadUserReports() {
-    try {
-      // You should get the user_id from your authentication system
-      const userId = 1; // Example user ID
-      
-      const response = await fetch(`get_user_reports.php?user_id=${userId}`);
-      const data = await response.json();
-      
-      if (data.success) {
-        this.renderReports(data.reports);
-      } else {
-        console.error('Error loading reports:', data.message);
-      }
-    } catch (error) {
-      console.error('Error loading reports:', error);
-    }
+    loadUserReports() {
+      console.log('Loading user reports from Local Storage...');
+      const reports = JSON.parse(localStorage.getItem('crimeReports')) || [];
+      console.log(`Reports loaded: ${reports.length} report(s)`);
+      this.renderReports(reports);
+
   }
 
   renderReports(reports) {
@@ -60,7 +50,7 @@ class ProfileManager {
     return `
       <div class="report-card">
         <div class="report-header">
-          <span class="report-type">${report.crime_type}</span>
+          <span class="report-type">${report.crimeType}</span>
           <span class="report-date">${this.formatDate(report.created_at)}</span>
         </div>
         <div class="report-details">
@@ -72,26 +62,27 @@ class ProfileManager {
             <span class="report-detail-label">Local</span>
             <span class="report-detail-value">${report.location}</span>
           </div>
-          ${report.weapons_present ? `
+          ${report.weapons ? `
             <div class="report-detail-item">
               <span class="report-detail-label">Armas</span>
               <span class="report-detail-value">
-                ${report.firearms_count} arma(s) de fogo
-                ${report.melee_weapons_count} arma(s) branca(s)
+                ${report.weapons.firearms} arma(s) de fogo
+                ${report.weapons.meleeWeapons} arma(s) branca(s)
               </span>
             </div>
           ` : ''}
           <div class="report-detail-item">
             <span class="report-detail-label">Vítimas</span>
             <span class="report-detail-value">
-              ${report.deaths_count} morte(s), ${report.injured_count} ferido(s)
+              ${report.casualties.deaths} morte(s), ${report.casualties.injured
+              } ferido(s)
             </span>
           </div>
         </div>
-        ${report.additional_args ? `
+        ${report.additionalArgs ? `
           <div class="report-arguments">
             <span class="report-detail-label">Argumentos Adicionais</span>
-            <p>${report.additional_args}</p>
+            <p>${report.additionalArgs}</p>
           </div>
         ` : ''}
       </div>
@@ -100,6 +91,10 @@ class ProfileManager {
 
   formatDate(dateString) {
     const date = new Date(dateString);
+    if (isNaN(date.getTime())) {
+      console.error(`Invalid date value: ${dateString}`);
+      return 'Data inválida';
+    }
     return new Intl.DateTimeFormat('pt-BR', {
       day: '2-digit',
       month: '2-digit',
@@ -110,9 +105,13 @@ class ProfileManager {
   }
 
   filterReports(searchTerm, filterType) {
-    // Implementation for filtering reports
-    // This would filter the actual reports based on search term and type
-    console.log(`Filtering reports: ${searchTerm}, ${filterType}`);
+    const reports = JSON.parse(localStorage.getItem('crimeReports')) || [];
+    const filteredReports = reports.filter(report => {
+      const matchesSearchTerm = report.crime_type.toLowerCase().includes(searchTerm.toLowerCase());
+      const matchesFilterType = filterType === 'all' || report.crime_type.toLowerCase() === filterType;
+      return matchesSearchTerm && matchesFilterType;
+    });
+    this.renderReports(filteredReports);
   }
 }
 
