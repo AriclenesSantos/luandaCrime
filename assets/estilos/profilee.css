@@ -310,11 +310,7 @@ footer button.active {
   font-weight: bold;
 }
 
-.footerIcone
-{
-  min-height: 25px;
-  min-width: 25px;
-
-  max-height: 30px;
-  max-width: 30px;
+.footerIcone {
+  height: 85px;
+  width: 85px;
 }
