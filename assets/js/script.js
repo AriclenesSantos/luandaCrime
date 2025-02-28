@@ -16,7 +16,7 @@ document.addEventListener("DOMContentLoaded", () => {
       const userData = JSON.parse(storedData);
       if (userData.email === email && userData.password === password) {
         alert("Login bem-sucedido! Bem-vindo(a), " + username + "!");
-        window.location.href = "C:/Users/NEMESIS/Desktop/luandaCrime Zone/loading pages/loadMap.html";
+        window.location.href = "mapa.html";
       } else {
         alert("Credenciais incorretas. Verifique seu e-mail e senha.");
       }

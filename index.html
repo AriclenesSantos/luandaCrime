@@ -1,73 +1,40 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-    <base href="." />
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="assets/estilos/footer.css">
-    <title>CrimeZone Luanda</title>
-
-    <!-- Leaflet CSS -->
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
-    <link rel="stylesheet" href="assets/estilos/mapa.css">
+    <link rel="stylesheet" href="assets/estilos/login.css">
+    <title>Document</title>
 </head>
 <body>
-  <div class="container" style="max-width: 1200px; margin: auto;">
+    <!--ring div starts here-->
+<div class="ring">
 
-    
-    
-    
-    <div id="map" style="width: 100%; height: 400px;"></div>
-
-    <div class="crime-form" id="crimeForm">
-        <h2>Registrar Crime</h2>
-        <form id="reportForm">
-            <div class="form-group">
-                <label for="crimeType">Tipo de Crime</label>
-                <select id="crimeType" required>
-                    <option value="">Selecione o tipo</option>
-                    <option value="assault">Assalto</option>
-                    <option value="robbery">Roubo</option>
-                    <option value="theft">Furto</option>
-                    <option value="violence">Violência</option>
-                </select>
-            </div>
-            <div class="form-group">
-                <label for="description">Descrição</label>
-                <textarea id="description" rows="3" required></textarea>
-            </div>
-            <div class="form-group">
-                <button type="submit" class="btn btn-danger">Enviar</button>
-                <button type="button" class="btn" onclick="closeForm()">Cancelar</button>
-            </div>
-        </form>
+  
+    <div class="login">
+      <img src="imagens/logo00.png" alt="">
+      <h2>Login</h2>
+      <div class="inputBx">
+        <input type="text" placeholder="Nome de usuario">
+      </div>
+      <div class="inputBx">
+        <input type="text" placeholder="E-mail">
+      </div>
+      <div class="inputBx">
+        <input type="password" placeholder="Senha">
+      </div>
+      <div class="inputBx">
+        <input type="submit" value="Entrar">
+      </div>
+      <div class="links">
+        <a href="#">Esqueci a senha</a>
+        <a href="cadastrar.html">Cadastrar</a>
+      </div>
     </div>
+  </div>
+  <!--ring div ends here-->
 
-    <div class="notification" id="notification">
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 16 16">
-            <path d="M8.982 1.566a1.13 1.13 0 0 0-1.964 0L.165 13.233c-.457.778.091 1.767.982 1.767h13.706c.89 0 1.439-.99.982-1.767L8.982 1.566zM8 5c.535 0 .954.462.9.995l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 5.995A.905.905 0 0 1 8 5zm.002 6a1 1 0 1 1-2.002 0 1 1 0 0 1 2.002 0z"/>
-        </svg>
-        ⚠️ Atenção! Você está próximo a uma área de risco.
-    </div>
-</div>
-
-<footer>
-    <a href="index.html" class="footerbutton">
-        <img src="assets/icones/mapaIcone.png" alt="" class="footerIcone">
-    </a>
-    <a href="reg.html" class="footerbutton">
-        <img src="assets/icones/plusIcone.png" alt="" class="footerIcone">
-    </a>
-    <a href="esta.html" class="footerbutton">
-        <img src="assets/icones/graficoIcone.png" alt="" class="footerIcone">
-    </a>
-    <a href="profile.html" class="footerbutton">
-        <img src="assets/icones/perfilIcone.png" alt="" class="footerIcone">
-    </a>
-</footer>
-
-<!-- Leaflet JS -->
-<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
-<script src="assets/js/mapa.js"></script>
+  <script src="assets/js/script.js"></script>
 </body>
 </html>
+
